@@ -1,6 +1,6 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show] #if user is not authenticated, do not do any METHOD except index and show
+  before_action :authenticate_user!, except: [:show] #if user is not authenticated, do not do any METHOD except index and show
   before_action :correct_user, only: [:edit, :update, :destroy] #for these methods stated, make sure the user is correct
   # GET /friends or /friends.json
   def index
@@ -74,4 +74,5 @@ class FriendsController < ApplicationController
     def friend_params
       params.require(:friend).permit(:first_name, :last_name, :email, :phone, :twitter, :user_id)
     end
+
 end

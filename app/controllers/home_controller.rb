@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
 
   def about #refers to views>home>about page
-  	@about_me = "My name is kiakou..."
+  	@about_me = "This is the About page..."
   	@answer = 2+2
   end
 end
