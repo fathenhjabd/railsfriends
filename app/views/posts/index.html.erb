@@ -20,6 +20,9 @@
   </tbody>
 </table>
 
-<br>
+<br/>
+<%= will_paginate @posts, class: 'pagination page-item page-link' %>
+<br/>
 
-<%= link_to 'New Post', new_post_path, class: :'btn btn-success' %>
+<%= link_to 'New Post', new_post_path, class: 'btn btn-success' %>
+

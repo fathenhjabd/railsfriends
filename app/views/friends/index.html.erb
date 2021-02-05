@@ -29,11 +29,13 @@
     </tbody>
   </table>
 
-  <br>
+  <br/>
+  <%= will_paginate @posts, class: 'pagination page-item page-link' %>
+  <br/>
 
   <%= link_to 'New Friend', new_friend_path, class: "btn btn-success" %>
 
 <% else %>
   <h1>Hello World!</h1>
-    This is the index.html.erb file that you just created
+    Please sign in to view your friends list!
 <% end %>
