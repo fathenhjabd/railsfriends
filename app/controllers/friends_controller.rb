@@ -6,6 +6,10 @@ class FriendsController < ApplicationController
   def index
     #@friends = Friend.all
     @friends  = Friend.paginate(:page => params[:page], :per_page=>5)
+    if params[:q]
+      @search_term = params[:search]
+      @friends = @friends.search_by(@search_term)
+    end
   end
 
   # GET /friends/1 or /friends/1.json

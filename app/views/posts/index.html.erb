@@ -10,6 +10,11 @@
   </thead>
 
   <tbody>
+    <%= form_for "", url: posts_path, role: "search", method: :get do %>
+      <%= text_field_tag :search, @search_term,placeholder: "Search by title" %>
+      <br/>
+    <% end %>
+    <br/>
     <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.title, post %></td>
